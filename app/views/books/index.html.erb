@@ -13,55 +13,15 @@
   </thead>
 
   <tbody>
-      <tr>
-        <td>リーダブルコード</td>
-        <td>より良いコードを書くためのシンプルで実践的なテクニック</td>
-        <td><a class="show_12936" href="/books/12936">Show</a></td>
-        <td><a class="edit_12936" href="/books/12936/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_12936" rel="nofollow" data-method="delete" href="/books/12936">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>トラブル知らずのシステム設計</td>
-        <td>システム設計の要点を図解で説明してくれます</td>
-        <td><a class="show_12937" href="/books/12937">Show</a></td>
-        <td><a class="edit_12937" href="/books/12937/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_12937" rel="nofollow" data-method="delete" href="/books/12937">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>たのしいRuby</td>
-        <td>Rubyの入門におすすめです</td>
-        <td><a class="show_12938" href="/books/12938">Show</a></td>
-        <td><a class="edit_12938" href="/books/12938/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_12938" rel="nofollow" data-method="delete" href="/books/12938">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>入門Git</td>
-        <td>gitについての基本操作から内部構造まで解説してくれます</td>
-        <td><a class="show_12939" href="/books/12939">Show</a></td>
-        <td><a class="edit_12939" href="/books/12939/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_12939" rel="nofollow" data-method="delete" href="/books/12939">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>アルゴリズム図鑑</td>
-        <td>アルゴリズムについてカラーイラストでしっかり解説してくれます</td>
-        <td><a class="show_12940" href="/books/12940">Show</a></td>
-        <td><a class="edit_12940" href="/books/12940/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_12940" rel="nofollow" data-method="delete" href="/books/12940">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>達人プログラマー</td>
-        <td>プログラマ入門者は必読！</td>
-        <td><a class="show_12941" href="/books/12941">Show</a></td>
-        <td><a class="edit_12941" href="/books/12941/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_12941" rel="nofollow" data-method="delete" href="/books/12941">Destroy</a></td>
-      </tr>
-      <tr>
-        <td>データベース実践入門</td>
-        <td>効率的なSQL文を教えてくれます</td>
-        <td><a class="show_12942" href="/books/12942">Show</a></td>
-        <td><a class="edit_12942" href="/books/12942/edit">Edit</a></td>
-        <td><a data-confirm="Are you sure?" class="destroy_12942" rel="nofollow" data-method="delete" href="/books/12942">Destroy</a></td>
-      </tr>
+    <% @books.each do |book| %>
+    <tr>
+       <td> <%= book.title %></td>
+        <td><%= book.body %></td>
+        <td><%= link_to 'Show','/books/:id' %></td>
+        <td><%= link_to 'Edit','/books/:id/edit' %></td>
+        <td><%= link_to 'Destroy',book_path(book),method: :delete %></td>
+     </tr>
+      <% end %>
   </tbody>
 </table>
 
