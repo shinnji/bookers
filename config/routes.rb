@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-get '' => 'homes#top'
+root to: 'homes#top'
+resources :homes
 resources :books
-
 end
